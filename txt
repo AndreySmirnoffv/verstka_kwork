@@ -1,0 +1,20 @@
+window.addEventListener('scroll', (e) => {
+        blocks.forEach(item => {
+            let pos = parseInt(item.getBoundingClientRect().y);
+            if (prev < parseInt(window.pageYOffset)) {
+                if (pos > parseInt(window.pageYOffset)) {
+                    console.clear();
+                    console.log(item);
+                }
+            } else {
+                if (pos < parseInt(window.pageYOffset)){
+                    console.clear();
+                    console.log(item);
+                }
+            }
+            prev = window.pageYOffset;
+        })
+    })
+
+    let blocks = document.querySelectorAll('.block');
+    let prev = 0;
